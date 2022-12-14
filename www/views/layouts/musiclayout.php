@@ -30,22 +30,26 @@ $this->registerMetaTag(['http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold text-dark">
-                        <li class="nav-item text-dark">
-                            <a class="nav-link" href="<?=Url::to(['@upload'])?>">Добавить трек</a>
-                        </li>
-                    </ul>
-                    <span class="navbar-text text-light">
-                        <a class="nav-link" href="<?=Url::to(['@auth'])?>">
-                            <?php if(Yii::$app->user->isGuest) : ?>
-                                Войти в аккаунт
-                            <?php else : ?>
-                                Выйти из аккаунта
-                            <?php endif; ?>
-                        </a>
-                    </span>
-                </div>
+
+                <?php if (\Yii::$app->request->pathInfo == '') : ?>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold text-dark">
+                            <li class="nav-item text-dark">
+                                <a class="nav-link" href="<?=Url::to(['@upload'])?>">Добавить трек</a>
+                            </li>
+                        </ul>
+                        <span class="navbar-text text-light">
+                            <a class="nav-link" href="<?=Url::to(['@auth'])?>">
+                                <?php if(Yii::$app->user->isGuest) : ?>
+                                    Войти в аккаунт
+                                <?php else : ?>
+                                    Выйти из аккаунта
+                                <?php endif; ?>
+                            </a>
+                        </span>
+                    </div>
+                <?php endif; ?>
+
             </div>
         </nav>
 
