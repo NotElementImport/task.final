@@ -166,17 +166,12 @@ const AdaptTracks = async (json_data) => {
 };
 
 const ProccesTrack = (track) => {
-
-    console.log(track);
-
     const AllElementsInTemplate = {
         ButtonPausePlay : document.getElementsByClassName(`ButtonToggle${UniqElementId}`)[0],
         LoadTitle : document.getElementById(`t_load${UniqElementId}`),
         DurationInfo : document.getElementById(`Duration${UniqElementId}`),
         AllButtons : document.querySelectorAll(`button.t_load${UniqElementId}`)
     };
-
-    console.log(AllElementsInTemplate);
 
     let Wave = WaveSurfer.create({
         container: document.getElementsByClassName(`WaveForm${UniqElementId}`)[0],
@@ -201,7 +196,6 @@ const ProccesTrack = (track) => {
         let Duration = Math.floor(Wave.getDuration());
         let Minute = Math.floor(Duration * (1 / 60));
 
-        console.log(AudioPlayer.AllSources.length - 1);
         AllElementsInTemplate.AllButtons.forEach(Element => {
             Element.classList.remove('disabled', `t_load${UniqElementId}`);
         });
