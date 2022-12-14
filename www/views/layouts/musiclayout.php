@@ -49,11 +49,9 @@ $this->registerMetaTag(['http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge
             </div>
         </nav>
 
-        <div class="container-md bg-light Shadow-l" style="margin-top: 0.7em;">
-            <div class="container text-center p-3">
-                <?= $content ?>
-            </div>
-        </div>
+        
+        <?= $content ?>
+
 
         <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">

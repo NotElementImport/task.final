@@ -187,7 +187,31 @@ a.desc:after {
     padding: 0.15em 0.45em;
 }
 
+.padding-a
+{
+    padding: 1em;
+}
+
+.padding-b
+{
+    padding: 2em;
+}
+
 @media (max-width: 768px) {
+
+    .mobile-width
+    {
+        width: 100% !important;
+        flex: 1 0 100% !important;
+        padding: 1em;
+    }
+
+    .padding-a, .padding-b
+    {
+        padding: 1em;
+    }
+
+
     .item_submit  
     {
         padding: 1em;
