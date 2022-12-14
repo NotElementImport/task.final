@@ -11,7 +11,6 @@ class RbacController extends Controller
     {
         $AuthData = Yii::$app->authManager;
         $AuthData->removeAll();
-        $AuthData->removeAll();
         
         User::deleteAll();
 
@@ -23,8 +22,6 @@ class RbacController extends Controller
         $RoleUser->description = "Basic user a site";
         $AuthData->add($RoleUser);
         $AuthData->addChild($RoleUser, $BasicPermission);
-
-        $AuthData->assign($RoleUser, 1);
 
         $UserOne = new User();
         $UserOne->username = "jonhdoe_1";
