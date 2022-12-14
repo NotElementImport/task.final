@@ -9,7 +9,7 @@ $this->title = "Login to account";
 
 <div class="container-md" style="margin-top: 50vh; transform: translateY(-60%);">
     <div class="container col-md-4 bg-light Shadow-l text-center padding-a">
-        <div class="padding-b">
+        <div class="padding-b border rounded">
             <?php $form = ActiveForm::begin([
                     'id' => 'login-form',
                     'layout' => 'horizontal',
