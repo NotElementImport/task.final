@@ -119,12 +119,12 @@ const FileValidate = () => {
     if(Feedback)
     {
         Modal.show_with_text('Ура!', 'Файл подходит под требования!');
+
+        FormElements.song_name.value = FormElements.file_data.name.split('.')[0];
     }
 };
 
 const PrepareToWork = () => {
-    console.log('prepare');
-
     FormElements.file.parentNode.addEventListener('drop', (ev) => {
         ev.preventDefault();
 
@@ -137,12 +137,10 @@ const PrepareToWork = () => {
 
     FormElements.file.addEventListener('dragover', (ev) => {
         ev.preventDefault();
-        console.log('feel');
     });
 
     FormElements.file.addEventListener('dragenter', (ev) => {
         ev.preventDefault();
-        console.log('feel');
     });
 
     FormElements.file.addEventListener('change', (ev) => {
@@ -194,9 +192,6 @@ const GetAllDataFromPoll = () => {
         }
     ).then(e => e.json()).then(e => {
         let Result = "";
-
-        console.log(e);
-
         for(let i = 0; i < e.length; i++)
         {
             let Inner = e[i];
