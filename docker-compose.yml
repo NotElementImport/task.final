@@ -43,7 +43,7 @@ services:
     ports:
       - "8081:8080"
     environment:
-      ADMINER_DB: task0912022
+      ADMINER_DB: app
       ADMINER_PASSWORD: secret
       ADMINER_SERVER: mysql
       ADMINER_USERNAME: app
